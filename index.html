@@ -12,30 +12,67 @@
     />
     <title>Admin dashboard</title>
     <link rel="stylesheet" href="./main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <section class="aside-and-main">
       <aside class="side-bar">
-        <img src="./images/hamburger.svg" alt="" class="hamburger" />
-        <img src="./images/blue-home.svg" alt="" class="side-bar__icon" />
-        <img src="./images/colored-Warning.svg" alt="" class="side-bar__icon" />
-        <img src="./images/colored-of-on.svg" alt="" class="side-bar__icon" />
-        <img src="./images/Pink-note.svg" alt="" class="side-bar__icon" />
-        <img src="./images/threelines.svg" alt="" class="side-bar__icon" />
-        <img src="./images/blue-two-side.svg" alt="" class="side-bar__icon" />
-        <img src="./images/green-shop.svg" alt="" class="side-bar__icon" />
-        <img
-          src="./images/colored-sections.svg"
-          alt=""
-          class="side-bar__icon"
-        />
-        <img src="./images/calendar.svg" alt="" class="side-bar__icon" />
-        <img src="" alt="" class="side-bar__icon" />
-        <img src="./images/rocket.svg" alt="" class="side-bar__icon" />
-        <img src="./images/paint.svg" alt="" class="side-bar__icon" />
-        <img src="./images/of-on.svg" alt="" class="side-bar__icon" />
-        <img src="./images/chart.svg" alt="" class="side-bar__icon" />
-        <img src="" alt="" class="side-bar__icon" />
+        <button class="hamburger-btn">
+          <img src="./images/hamburger.svg" alt="" class="hamburger" />
+        </button>
+        <button class="side-bar__icon-btn">
+          <img src="./images/blue-home.svg" alt="" class="side-bar__icon" />
+        </button>
+        <button class="side-bar__icon-btn">
+          <img
+            src="./images/colored-Warning.svg"
+            alt=""
+            class="side-bar__icon"
+          />
+        </button>
+        <button class="side-bar__icon-btn">
+          <img src="./images/colored-of-on.svg" alt="" class="side-bar__icon" />
+        </button>
+        <button class="side-bar__icon-btn">
+          <img src="./images/Pink-note.svg" alt="" class="side-bar__icon" />
+        </button>
+        <button class="side-bar__icon-btn">
+          <img src="./images/threelines.svg" alt="" class="side-bar__icon" />
+        </button>
+        <button class="side-bar__icon-btn">
+          <img src="./images/blue-two-side.svg" alt="" class="side-bar__icon" />
+        </button>
+        <button class="side-bar__icon-btn">
+          <img src="./images/green-shop.svg" alt="" class="side-bar__icon" />
+        </button>
+
+        <button class="side-bar__icon-btn">
+          <img
+            src="./images/colored-sections.svg"
+            alt=""
+            class="side-bar__icon"
+          />
+        </button>
+
+        <button class="side-bar__icon-btn">
+          <img src="./images/calendar.svg" alt="" class="side-bar__icon" />
+        </button>
+
+        <button class="side-bar__icon-btn">
+          <img src="./images/rocket.svg" alt="" class="side-bar__icon" />
+        </button>
+
+        <button class="side-bar__icon-btn">
+          <img src="./images/paint.svg" alt="" class="side-bar__icon" />
+        </button>
+
+        <button class="side-bar__icon-btn">
+          <img src="./images/of-on.svg" alt="" class="side-bar__icon" />
+        </button>
+
+        <button class="side-bar__icon-btn">
+          <img src="./images/chart.svg" alt="" class="side-bar__icon" />
+        </button>
       </aside>
 
       <section class="main">
@@ -46,12 +83,21 @@
           </div>
 
           <div class="header__right">
-            <img src="./images/bell.svg" alt="" class="header__right__image" />
-            <img
-              src="./images/uncolored-Warning.svg"
-              alt=""
-              class="header__right__image"
-            />
+            <button class="side-bar__icon-btn">
+              <img
+                src="./images/bell.svg"
+                alt=""
+                class="header__right__image"
+              />
+            </button>
+
+            <button class="side-bar__icon-btn">
+              <img
+                src="./images/uncolored-Warning.svg"
+                alt=""
+                class="header__right__image"
+              />
+            </button>
             <div class="header__rigth__div">
               <img
                 src="./images/girl.png"
@@ -68,13 +114,20 @@
           <div class="default__top">
             <div class="default__left">
               <h2 class="default__left__heading">Default</h2>
-              <img
-                src="./images/white-home.svg"
-                alt=""
-                class="default__left__image"
-              />
-              <p class="default__left__paragraph">Dashboards</p>
-              <p class="default__left__paragraph">Default</p>
+              <button class="side-bar__icon-btn">
+                <img
+                  src="./images/white-home.svg"
+                  alt=""
+                  class="default__left__image"
+                />
+              </button>
+
+              <button class="side-bar__icon-btn">
+                <p class="default__left__paragraph">Dashboards</p>
+              </button>
+              <button class="side-bar__icon-btn">
+                <p class="default__left__paragraph">Default</p>
+              </button>
             </div>
             <div class="default__right">
               <button class="default__button">New</button>
@@ -165,15 +218,20 @@
 
         <section class="charts">
           <div class="sales__value">
-            <img src="./images/ChartLine.svg" alt="" class="chartLine" />
+            <!-- <img src="./images/ChartLine.svg" alt="" class="chartLine" /> -->
+            <canvas id="myChart" class="chartLine"></canvas>
             <div class="sales__value__top">
               <div class="sales__value__info">
                 <p class="sales__value__paragraph">OVERVIEW</p>
                 <p class="sales__value__paragraph1">Sales value</p>
               </div>
               <div class="sales__value__buttons">
-                <button class="sales__value__button">Month</button>
-                <button class="sales__value__button">Week</button>
+                <button class="sales__value__button" id="sales__button__month">
+                  Month
+                </button>
+                <button class="sales__value__button" id="sales__button__week">
+                  Week
+                </button>
               </div>
             </div>
 
@@ -232,7 +290,7 @@
               <span class="orders__line"></span>
             </div>
 
-            <div class="orders__child">
+            <!-- <div class="orders__child">
               <div class="orders-diagram">
                 <span class="diagram-num">30</span>
                 <span class="orders-diagram__line"></span>
@@ -276,7 +334,8 @@
                   <span class="orders__diagram__line"></span>
                   <p class="orders__diagram-month">Nov</p>
                 </div>
-              </div>
+              </div> -->
+              <canvas id="barchart"></canvas>
             </div>
           </div>
         </section>
@@ -351,7 +410,7 @@
                 <h3 class="todo-item__heading">Lunch meeting</h3>
                 <p class="todo-item__time">10:30 AM</p>
               </div>
-              <input type="checkbox" class="todo-item__checkbox" />
+              <input type="checkbox" class="todo-item__checkbox input-second" />
             </div>
 
             <span class="team-members__span"></span>
@@ -362,7 +421,7 @@
                 <h3 class="todo-item__heading">Argon Dashboard Launch</h3>
                 <p class="todo-item__time">10:30 AM</p>
               </div>
-              <input type="checkbox" class="todo-item__checkbox" />
+              <input type="checkbox" class="todo-item__checkbox input-third" />
             </div>
 
             <span class="team-members__span"></span>
@@ -373,7 +432,7 @@
                 <h3 class="todo-item__heading">Winter Hackaton</h3>
                 <p class="todo-item__time">10:30 AM</p>
               </div>
-              <input type="checkbox" class="todo-item__checkbox" />
+              <input type="checkbox" class="todo-item__checkbox input-fourth" />
             </div>
           </div>
 
@@ -393,7 +452,9 @@
               />
               <div class="progress__first__info">
                 <p class="progress__first__paragraph">Argon Design System</p>
-                <span class="progress__first__span-boot"></span>
+                <div class="progress__first__div">
+                  <span class="progress__first__span-boot"></span>
+                </div>
               </div>
             </div>
             <span class="team-members__span"></span>
@@ -407,7 +468,9 @@
               />
               <div class="progress__first__info">
                 <p class="progress__first__paragraph">Angular Now UI Kit PRO</p>
-                <span class="progress__first__span-ang"></span>
+                <div class="progress__first__div">
+                  <span class="progress__first__span-ang"></span>
+                </div>
               </div>
             </div>
             <span class="team-members__span"></span>
@@ -421,7 +484,9 @@
               />
               <div class="progress__first__info">
                 <p class="progress__first__paragraph">Black Dashboard</p>
-                <span class="progress__first__span-diamond"></span>
+                <div class="progress__first__div">
+                  <span class="progress__first__span-diamond"></span>
+                </div>
               </div>
             </div>
             <span class="team-members__span"></span>
@@ -437,12 +502,497 @@
                 <p class="progress__first__paragraph">
                   React Material Dashboard
                 </p>
-                <span class="progress__first__span-react"></span>
+                <div class="progress__first__div">
+                  <span class="progress__first__span-react"></span>
+                </div>
               </div>
             </div>
           </div>
         </section>
+
+        <section class="activity-and_lightTable">
+          <section class="activity">
+            <h3 class="team-members__heading">Activity feed</h3>
+            <span class="team-members__span"></span>
+
+            <div class="team-members__person">
+              <img src="./images/activity-img.png" alt="" />
+              <div class="person-info">
+                <h3 class="person-info__name">John Michael</h3>
+                <p class="activity-date">3 days ago</p>
+              </div>
+              <div class="follow-btn">
+                <img src="./images/plus.svg" alt="" class="plus" />
+                <button class="person-btn-toadd activity-follow-btn">
+                  Follow
+                </button>
+              </div>
+            </div>
+
+            <span class="team-members__span"></span>
+
+            <p class="activity-paragraph">
+              Personal profiles are the perfect way for you to grab their
+              attention and persuade recruiters to continue reading your CV
+              because you’re telling them from the off exactly why they should
+              hire you.
+            </p>
+
+            <img
+              src="./images/activity-main-image.png"
+              alt=""
+              width="500px"
+              class="activity-main-image"
+            />
+            <div class="activity-post">
+              <div class="post">
+                <img src="./images/like.svg" alt="" class="post__likes" />
+                <p class="likes-count">150</p>
+                <img src="./images/comment.svg" alt="" class="post__likes" />
+                <p class="likes-count">36</p>
+                <img src="./images/share.svg" alt="" class="post__likes" />
+                <p class="likes-count">12</p>
+              </div>
+              <div class="activity-post-right">
+                <img
+                  src="./images/alex.png"
+                  alt=""
+                  width="20"
+                  height="20"
+                  class="activity-post-right-image"
+                />
+                <p class="activity-post-right-paragraph">and 30+ more</p>
+              </div>
+            </div>
+            <span class="team-members__span"></span>
+
+            <div class="comments__div">
+              <img
+                src="./images/person1.png"
+                alt=""
+                class="comments__div__person"
+              />
+              <h3 class="comments__div__heading">Michael Lewis</h3>
+              <p class="comments__div__paragraph">
+                Cras sit amet nibh libero nulla vel metus scelerisque ante
+                sollicitudin. Cras purus odio vestibulum in vulputate viverra
+                turpis.
+              </p>
+              <div class="comments__div__likes">
+                <img src="./images/like.svg" alt="" class="post__likes" />
+                <p class="likes-count">3 likes</p>
+
+                <img src="./images/share.svg" alt="" class="post__likes" />
+                <p class="likes-count">2 shares</p>
+              </div>
+            </div>
+
+            <div class="comments__div">
+              <img
+                src="./images/alex.png"
+                alt=""
+                class="comments__div__person"
+              />
+              <h3 class="comments__div__heading">Jessica Stones</h3>
+              <p class="comments__div__paragraph">
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                vulputate at, tempus viverra turpis.
+              </p>
+              <div class="comments__div__likes">
+                <img src="./images/like.svg" alt="" class="post__likes" />
+                <p class="likes-count">10 likes</p>
+
+                <img src="./images/share.svg" alt="" class="post__likes" />
+                <p class="likes-count">1 share</p>
+              </div>
+            </div>
+
+            <span class="team-members__span"></span>
+
+            <div class="comments__input">
+              <img src="./images/ivy.png" alt="" />
+              <input
+                type=""
+                class="comment-input"
+                placeholder="Write your comment"
+              />
+            </div>
+          </section>
+
+          <section class="light-table">
+            <h3 class="light-tabel__heading team-members__heading">
+              Light table
+            </h3>
+            <span class="team-members__span"></span>
+
+            <div class="light-table__child">
+              <img src="./images/bootstrap.svg" alt="" class="child__argon" />
+              <p class="child__paragraph">Argon Design System</p>
+              <p class="child__budget">$2500 USD</p>
+              <p class="child__status">pending</p>
+              <div class="child__users">
+                <img
+                  src="./images/alex.png"
+                  alt=""
+                  class="child__users__first"
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <div class="table---progress">
+                <span class="child__completion">60%</span>
+                <div class="table-progress">
+                  <div class="table-progress-fill"></div>
+                </div>
+              </div>
+            </div>
+
+            <span class="team-members__span"></span>
+            <div class="light-table__child">
+              <img src="./images/angular.svg" alt="" class="child__argon" />
+              <p class="child__paragraph">Angular Now UI Kit PRO</p>
+              <p class="child__budget">$1800 USD</p>
+              <p class="child__status child-status-on">completed</p>
+              <div class="child__users">
+                <img
+                  src="./images/alex.png"
+                  alt=""
+                  class="child__users__first"
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <div class="table---progress">
+                <span class="child__completion">100%</span>
+                <div class="table-progress">
+                  <div
+                    class="table-progress-fill table-progress-fill-100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <span class="team-members__span"></span>
+            <div class="light-table__child">
+              <img src="./images/diamond.svg" alt="" class="child__argon" />
+              <p class="child__paragraph">Black Dashboard</p>
+              <p class="child__budget">$3150 USD</p>
+              <p class="child__status">delayed</p>
+              <div class="child__users">
+                <img
+                  src="./images/alex.png"
+                  alt=""
+                  class="child__users__first"
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <div class="table---progress">
+                <span class="child__completion">72%</span>
+                <div class="table-progress">
+                  <div class="table-progress-fill table-progress-fill-72"></div>
+                </div>
+              </div>
+            </div>
+
+            <span class="team-members__span"></span>
+            <div class="light-table__child">
+              <img src="./images/react.svg" alt="" class="child__argon" />
+              <p class="child__paragraph">React Material Dashboard</p>
+              <p class="child__budget">$4400 USD</p>
+              <p class="child__status child__status-onschedule">on schedule</p>
+              <div class="child__users">
+                <img
+                  src="./images/alex.png"
+                  alt=""
+                  class="child__users__first"
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <div class="table---progress">
+                <span class="child__completion">90%</span>
+                <div class="table-progress">
+                  <div class="table-progress-fill table-progress-fill-90"></div>
+                </div>
+              </div>
+            </div>
+
+            <span class="team-members__span"></span>
+            <div class="light-table__child">
+              <img src="./images/vue.svg" alt="" class="child__argon" />
+              <p class="child__paragraph">Vue Paper UI Kit PRO</p>
+              <p class="child__budget">$2200 USD</p>
+              <p class="child__status child-status-on">completed</p>
+              <div class="child__users">
+                <img
+                  src="./images/alex.png"
+                  alt=""
+                  class="child__users__first"
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <div class="table---progress">
+                <span class="child__completion">100%</span>
+                <div class="table-progress">
+                  <div
+                    class="table-progress-fill table-progress-fill-100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <span class="team-members__span"></span>
+            <div class="light-table__child">
+              <img src="./images/bootstrap.svg" alt="" class="child__argon" />
+              <p class="child__paragraph">Argon Design System</p>
+              <p class="child__budget">$2500 USD</p>
+              <p class="child__status">pending</p>
+              <div class="child__users">
+                <img
+                  src="./images/alex.png"
+                  alt=""
+                  class="child__users__first"
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <div class="table---progress">
+                <span class="child__completion">60%</span>
+                <div class="table-progress">
+                  <div class="table-progress-fill table-progress-fill-60"></div>
+                </div>
+              </div>
+            </div>
+
+            <span class="team-members__span"></span>
+            <div class="light-table__child">
+              <img src="./images/angular.svg" alt="" class="child__argon" />
+              <p class="child__paragraph">Angular Now UI Kit PRO</p>
+              <p class="child__budget">$1800 USD</p>
+              <p class="child__status child-status-on">completed</p>
+              <div class="child__users">
+                <img
+                  src="./images/alex.png"
+                  alt=""
+                  class="child__users__first"
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <div class="table---progress">
+                <span class="child__completion">100%</span>
+                <div class="table-progress">
+                  <div
+                    class="table-progress-fill table-progress-fill-100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <span class="team-members__span"></span>
+            <div class="light-table__child">
+              <img src="./images/diamond.svg" alt="" class="child__argon" />
+              <p class="child__paragraph">Black Dashboard</p>
+              <p class="child__budget">$3150 USD</p>
+              <p class="child__status">delayed</p>
+              <div class="child__users">
+                <img
+                  src="./images/alex.png"
+                  alt=""
+                  class="child__users__first"
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <div class="table---progress">
+                <span class="child__completion">72%</span>
+                <div class="table-progress">
+                  <div class="table-progress-fill table-progress-fill-72"></div>
+                </div>
+              </div>
+            </div>
+
+            <span class="team-members__span"></span>
+            <div class="light-table__child">
+              <img src="./images/angular.svg" alt="" class="child__argon" />
+              <p class="child__paragraph">Angular Now UI Kit PRO</p>
+              <p class="child__budget">$1800 USD</p>
+              <p class="child__status child-status-on">completed</p>
+              <div class="child__users">
+                <img
+                  src="./images/alex.png"
+                  alt=""
+                  class="child__users__first"
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <div class="table---progress">
+                <span class="child__completion">90%</span>
+                <div class="table-progress">
+                  <div class="table-progress-fill table-progress-fill-90"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="credit__bitcoin">
+              <div class="addcredit">
+                <p class="addcredit__paragraph">$3,300</p>
+                <p class="addcredit__balance">Your current balance</p>
+                <div class="addcreedit__child">
+                  <p class="addcredit__child-green">+ 15%</p>
+                  <p class="addcredit__child-white">($250)</p>
+                </div>
+                <button class="addcredit__btn">Add credit</button>
+
+                <div class="sales__orders">
+                  <div class="orders-">
+                    <p class="orders__paragraph">Orders: 60%</p>
+                  </div>
+                  <div class="sales">
+                    <p class="sales__paragraph orders__paragraph">Sales: 40%</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bitcoin">
+                <div class="bitcoin__buttons">
+                  <img src="./images/bitcoin.svg" alt="" />
+                  <button class="bitcoin__button-active">Active</button>
+                </div>
+
+                <p class="bitcoin__username">USERNAME</p>
+                <p class="bitcoin__usernam-valuee">@johnsnow</p>
+
+                <p class="bitcoin__username">NAME</p>
+                <p class="bitcoin__usernam-valuee">John Snow</p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <footer class="footer">
+          <div class="visits">
+            <div class="visits__top">
+              <h3 class="team-members__heading">Page visits</h3>
+              <button class="visits__button person-btn-toadd">See all</button>
+            </div>
+
+            <table class="table">
+              <tr>
+                <th class="t__heading">PAGE NAME</th>
+                <th class="t__heading">VISITORS</th>
+                <th class="t__heading">UNIQUE USERS</th>
+                <th class="t__heading">BOUNCE RATE</th>
+              </tr>
+              <tr>
+                <td class="table-data">/argon/</td>
+                <td class="table-data">4,569</td>
+                <td class="table-data">340</td>
+                <td class="table-data up">46,53%</td>
+              </tr>
+              <tr>
+                <td class="table-data">/argon/index.html</td>
+                <td class="table-data">3,985</td>
+                <td class="table-data">319</td>
+                <td class="table-data down">46,53%</td>
+              </tr>
+              <tr>
+                <td class="table-data">/argon/charts.html</td>
+                <td class="table-data">3,513</td>
+                <td class="table-data">294</td>
+                <td class="table-data down">36,49%</td>
+              </tr>
+
+              <tr>
+                <td class="table-data">/argon/tables.html</td>
+                <td class="table-data">2,050</td>
+                <td class="table-data">147</td>
+                <td class="table-data up">50,87%</td>
+              </tr>
+
+              <tr>
+                <td class="table-data">/argon/profile.html</td>
+                <td class="table-data">1,795</td>
+                <td class="table-data">190</td>
+                <td class="table-data down">46,53%</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="social__traffic">
+            <div class="social__top">
+              <h3 class="team-members__heading">Page visits</h3>
+              <button class="visits__button person-btn-toadd">See all</button>
+            </div>
+            <table class="table">
+              <tr>
+                <th class="social-t__heading t__heading">REFERRAL</th>
+                <th class="social-t__heading t__heading">VISITORS</th>
+                <th class="social-t__heading t__heading"></th>
+              </tr>
+
+              <tr>
+                <td class="table-data social-table-data">Facebook</td>
+                <td class="table-data social-table-data">1,480</td>
+                <td class="table-data social-table-data">
+                  <div class="progress-bar">
+                    <p class="progress-bar-percent">60%</p>
+                    <div class="progress-fill"></div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table-data social-table-data">Facebook</td>
+                <td class="table-data social-table-data">5,480</td>
+                <td class="table-data social-table-data">
+                  <div class="progress-bar">
+                    <p class="progress-bar-percent">70%</p>
+                    <div class="progress-fill fill-70"></div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table-data social-table-data">Google</td>
+                <td class="table-data social-table-data">4,807</td>
+                <td class="table-data social-table-data">
+                  <div class="progress-bar">
+                    <p class="progress-bar-percent">80%</p>
+                    <div class="progress-fill fill-80"></div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table-data social-table-data">Instagram</td>
+                <td class="table-data social-table-data">3,678</td>
+                <td class="table-data social-table-data">
+                  <div class="progress-bar">
+                    <p class="progress-bar-percent">75%</p>
+                    <div class="progress-fill fill-75"></div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table-data social-table-data">twitter</td>
+                <td class="table-data social-table-data">2,645</td>
+                <td class="table-data social-table-data">
+                  <div class="progress-bar">
+                    <p class="progress-bar-percent">30%</p>
+                    <div class="progress-fill fill-30"></div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </footer>
       </section>
     </section>
+    <script src="./chart.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
